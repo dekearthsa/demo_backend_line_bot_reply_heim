@@ -20,8 +20,8 @@ const controllerLineReply = (req, res) => {
     const REPLY_TOKEN = req.body.events[0].replyToken;
     const USER_TYPE = req.body.events[0].source.type;
     const USER_ID = req.body.events[0].source.userId;
-    console.log("req.body => ", req.body);
-    console.log("req.body.events[0] => ", req.body.events[0]);
+    // console.log("req.body => ", req.body)
+    // console.log("req.body.events[0] => ", req.body.events[0])
     try {
         if (MSG_TYPE === "text") {
             if (body.events[0].message.text === "สมัครใช้งาน") {

@@ -23,8 +23,8 @@ const controllerLineReply = (req:any, res:any) => {
     const REPLY_TOKEN = req.body.events[0].replyToken;
     const USER_TYPE = req.body.events[0].source.type;
     const USER_ID = req.body.events[0].source.userId;
-    console.log("req.body => ", req.body)
-    console.log("req.body.events[0] => ", req.body.events[0])
+    // console.log("req.body => ", req.body)
+    // console.log("req.body.events[0] => ", req.body.events[0])
     try{    
         if(MSG_TYPE === "text"){
             if(body.events[0].message.text === "สมัครใช้งาน"){
@@ -40,6 +40,9 @@ const controllerLineReply = (req:any, res:any) => {
                 // const echo = { type: 'flex', altText: 'register', contents: flexMsg }
                 // const echo = {type: "text", text: MSG_TYPE}
                 // return LINE_CLIENT.replyMessage(REPLY_TOKEN, echo)
+            }else if(body.events[0].message.text === "รับทราบ"){
+                const echo = {type: "text", text: "demo flex message"}
+                return LINE_CLIENT.replyMessage(REPLY_TOKEN, echo)
             }
         }else if(MSG_TYPE === "image"){
             const echo = {type: "text", text: "not support now!"}
